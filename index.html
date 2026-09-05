@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>فروشگاه CP کالاف دیوتی</title>
+  <meta name="description" content="فروش CP کالاف دیوتی موبایل">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+
+    body {
+      background: #0b0f17;
+      color: white;
+    }
+
+    header {
+      background: #111827;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #263244;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      color: #00e5ff;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 18px;
+    }
+
+    nav a:hover {
+      color: #00e5ff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 70px 20px;
+      background: linear-gradient(135deg, #111827, #07131c);
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: #00e5ff;
+    }
+
+    .hero p {
+      color: #b8c1cc;
+      font-size: 18px;
+    }
+
+    .products {
+      padding: 45px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .products h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #151d2b;
+      border: 1px solid #273449;
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #00e5ff;
+    }
+
+    .cp {
+      font-size: 30px;
+      font-weight: bold;
+      color: #00e5ff;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #00e5ff;
+      color: #061018;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #00bcd4;
+    }
+
+    .order {
+      max-width: 600px;
+      margin: 20px auto 60px;
+      padding: 30px;
+      background: #151d2b;
+      border-radius: 15px;
+      border: 1px solid #273449;
+      display: none;
+    }
+
+    .order h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 13px;
+      margin: 8px 0 15px;
+      border-radius: 8px;
+      border: 1px solid #35445a;
+      background: #0b0f17;
+      color: white;
+      outline: none;
+    }
+
+    label {
+      color: #cbd5e1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #111827;
+      color: #8995a6;
+    }
+
+    .success {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      background: #123b2b;
+      color: #7ff0b2;
+      display: none;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">⚡ CP SHOP</div>
+
+  <nav>
+    <a href="#home">خانه</a>
+    <a href="#products">محصولات</a>
+    <a href="#support">پشتیبانی</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h1>فروشگاه CP کالاف دیوتی</h1>
+  <p>خرید سریع و آسان CP برای Call of Duty Mobile</p>
+</section>
+
+<section class="products" id="products">
+
+  <h2>انتخاب مقدار CP</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="cp">80 CP</div>
+      <div class="price">قیمت: ۵۰,۰۰۰ تومان</div>
+      <button onclick="selectProduct('80 CP')">خرید</button>
+    </div>
+
+    <div class="card">
+      <div class="cp">420 CP</div>
+      <div class="price">قیمت: ۲۰۰,۰۰۰ تومان</div>
+      <button onclick="selectProduct('420 CP')">خرید</button>
+    </div>
+
+    <div class="card">
+      <div class="cp">880 CP</div>
+      <div class="price">قیمت: ۴۰۰,۰۰۰ تومان</div>
+      <button onclick="selectProduct('880 CP')">خرید</button>
+    </div>
+
+    <div class="card">
+      <div class="cp">2400 CP</div>
+      <div class="price">قیمت: ۹۰۰,۰۰۰ تومان</div>
+      <button onclick="selectProduct('2400 CP')">خرید</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="order" id="order">
+
+  <h2>ثبت سفارش</h2>
+
+  <label>محصول انتخابی</label>
+  <input type="text" id="product" readonly>
+
+  <label>آیدی بازیکن</label>
+  <input type="text" id="playerId" placeholder="Player ID">
+
+  <label>شماره تماس</label>
+  <input type="tel" id="phone" placeholder="09xxxxxxxxx">
+
+  <button onclick="submitOrder()">ثبت سفارش</button>
+
+  <div class="success" id="success">
+    سفارش شما با موفقیت ثبت شد.
+  </div>
+
+</section>
+
+<footer id="support">
+  پشتیبانی فروشگاه | CP SHOP
+</footer>
+
+<script>
+
+function selectProduct(product) {
+  document.getElementById("product").value = product;
+
+  const order = document.getElementById("order");
+  order.style.display = "block";
+
+  order.scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function submitOrder() {
+
+  const product = document.getElementById("product").value;
+  const playerId = document.getElementById("playerId").value;
+  const phone = document.getElementById("phone").value;
+
+  if (!playerId || !phone) {
+    alert("لطفاً اطلاعات سفارش را کامل کنید.");
+    return;
+  }
+
+  document.getElementById("success").style.display = "block";
+
+  console.log("Product:", product);
+  console.log("Player ID:", playerId);
+  console.log("Phone:", phone);
+}
+
+</script>
+
+</body>
+</html>
